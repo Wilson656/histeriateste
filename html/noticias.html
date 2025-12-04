@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias | Sua Revista Pop</title>
+    <!-- Fontes e Ícones globais -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Importa estilos da Home (Base) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Importa estilos específicos para o layout de lista de notícias -->
+    <link rel="stylesheet" href="../css/noticias.css" />
+  </head>
+  <body>
+    <!-- HEADER REUTILIZADO DA PÁGINA INICIAL -->
+    <header>
+      <div class="container">
+        <div class="logo-area">
+          <img src="../assets/logo-revista-histeria_31.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Menu de Navegação Secundário -->
+      <nav>
+        <div class="container">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="./index.html">Home</a></li>
+            <li class="nav-item"><a href="./news.html">Notícias</a></li>
+            <li class="nav-item"><a href="./news.html">Colunas</a></li>
+            <li class="nav-item"><a href="./news.html">Eventos</a></li>
+            <li class="nav-item">
+              <a href="./news.html">História Histérica</a>
+            </li>
+
+            <!-- Dropdown Editorias -->
+            <li class="nav-item dropdown" id="editorias-dropdown">
+              <a href="javascript:void(0);" onclick="toggleDropdown()">
+                Editorias
+                <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
+              </a>
+              <ul class="dropdown-menu" id="editorias-menu">
+                <li><a href="./news.html">Cinema/TV</a></li>
+                <li><a href="./news.html">Música</a></li>
+                <li><a href="./news.html">Literatura</a></li>
+                <li><a href="./news.html">Teatro</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="news-main">
+      <div class="container">
+        <!-- Título da Seção -->
+        <h1 class="page-title">
+          Últimas <span style="color: var(--color-primary)">Notícias</span>
+        </h1>
+
+        <section class="news-list-section">
+          <!-- Notícia 1 (Card Vertical Grande) -->
+          <a href="../html/artigo.html" class="news-list-card">
+            <div
+              class="news-image"
+              style="
+                background-image: url('https://placehold.co/800x450/A0522D/FFF6CE?text=Capa+da+Reportagem+1');
+              "
+            >
+              <span class="category-tag">LITERATURA</span>
+            </div>
+            <div class="news-content">
+              <h2>
+                O Livro que Virou Mania: Por que a Distopia Pop Está de Volta
+              </h2>
+              <p class="summary">
+                Analisamos o fenômeno literário que está dominando o TikTok e as
+                livrarias, explorando as razões por trás do sucesso repentino de
+                autores independentes.
+              </p>
+              <div class="meta">
+                <span class="author">Por T. G. Book</span>
+                <span class="date">3 de Dezembro de 2025</span>
+              </div>
+              <span class="read-more"
+                >Ler Artigo Completo <i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </a>
+
+          <!-- Notícia 2 (Card Vertical Grande) -->
+          <a href="#" class="news-list-card">
+            <div
+              class="news-image"
+              style="
+                background-image: url('https://placehold.co/800x450/4A2E2C/FFF6CE?text=Capa+da+Reportagem+2');
+              "
+            >
+              <span class="category-tag">MÚSICA | EXCLUSIVO</span>
+            </div>
+            <div class="news-content">
+              <h2>
+                Por Dentro do Novo Clipe: A Estrela X Revela Detalhes da
+                Produção
+              </h2>
+              <p class="summary">
+                Entrevistamos a equipe de produção e a própria artista sobre os
+                bastidores e os easter eggs escondidos em seu videoclipe de
+                maior sucesso.
+              </p>
+              <div class="meta">
+                <span class="author">Por M. Pop Chart</span>
+                <span class="date">2 de Dezembro de 2025</span>
+              </div>
+              <span class="read-more"
+                >Ler Artigo Completo <i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </a>
+
+          <!-- Notícia 3 (Card Vertical Grande) -->
+          <a href="#" class="news-list-card">
+            <div
+              class="news-image"
+              style="
+                background-image: url('https://placehold.co/800x450/FF69B4/4A2E2C?text=Capa+da+Reportagem+3');
+              "
+            >
+              <span class="category-tag">CINEMA/TV</span>
+            </div>
+            <div class="news-content">
+              <h2>Série de Fantasia é Renovada para Mais Duas Temporadas</h2>
+              <p class="summary">
+                Saiba tudo sobre o anúncio da plataforma de streaming e o que os
+                showrunners planejam para o futuro desta aclamada produção.
+              </p>
+              <div class="meta">
+                <span class="author">Por C. I. Flix</span>
+                <span class="date">1 de Dezembro de 2025</span>
+              </div>
+              <span class="read-more"
+                >Ler Artigo Completo <i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </a>
+
+          <!-- Notícia 4 (Card Vertical Grande) -->
+          <a href="#" class="news-list-card">
+            <div
+              class="news-image"
+              style="
+                background-image: url('https://placehold.co/800x450/4A2E2C/FFF6CE?text=Capa+da+Reportagem+4');
+              "
+            >
+              <span class="category-tag">EVENTOS | CULTURA GEEK</span>
+            </div>
+            <div class="news-content">
+              <h2>Cobertura Completa: Os Melhores Cosplays da Histeria Con</h2>
+              <p class="summary">
+                Um resumo fotográfico dos looks mais criativos e detalhados do
+                evento pop mais aguardado do ano, com entrevistas exclusivas.
+              </p>
+              <div class="meta">
+                <span class="author">Por J. F. Festas</span>
+                <span class="date">30 de Novembro de 2025</span>
+              </div>
+              <span class="read-more"
+                >Ler Artigo Completo <i class="fas fa-arrow-right"></i
+              ></span>
+            </div>
+          </a>
+
+          <!-- ---------------------------------
+            PAGINAÇÃO (Para simular a navegação de lista)
+            --------------------------------- -->
+          <div class="pagination">
+            <a href="#" class="page-link disabled"
+              ><i class="fas fa-chevron-left"></i> Anterior</a
+            >
+            <span class="page-number current">1</span>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <a href="#" class="page-link"
+              >Próxima <i class="fas fa-chevron-right"></i
+            ></a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER REUTILIZADO DA PÁGINA INICIAL -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="../assets/logo-revista-histeria_31.png" alt="" />
+            </div>
+            <p style="font-size: 0.9rem">
+              Sua fonte diária e definitiva de notícias sobre cultura pop,
+              música, cinema, livros e muito mais.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navegação</h4>
+            <ul class="footer-list">
+              <li><a href="./news.html">Notícias</a></li>
+              <li><a href="./news.html">Colunas</a></li>
+              <li><a href="./news.html">Eventos</a></li>
+              <li><a href="./news.html">História Histérica</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Editorias</h4>
+            <ul class="footer-list">
+              <li><a href="./news.html">Cinema/TV</a></li>
+              <li><a href="./news.html">Música</a></li>
+              <li><a href="./news.html">Literatura</a></li>
+              <li><a href="./news.html">Teatro</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+              <a
+                href="https://instagram.com/seurealinstagram"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://facebook.com/seurealfacebook"
+                target="_blank"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com/seurealtwitter"
+                target="_blank"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">
+          &copy; 2025 Sua Revista Pop. Todos os direitos reservados. Design e
+          Conteúdo por [Seu Nome/Empresa].
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS (incluído para manter o dropdown e outras funcionalidades) -->
+    <script src="../script.js"></script>
+  </body>
+</html>

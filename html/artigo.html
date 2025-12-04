@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      O Livro que Virou Mania: Por que a Distopia Pop Está de Volta | Sua
+      Revista Pop
+    </title>
+    <!-- Fontes e Ícones globais -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Importa estilos da Home (Base) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Importa estilos específicos para o layout de lista de notícias -->
+    <link rel="stylesheet" href="../css/noticias.css" />
+  </head>
+  <body>
+    <!-- HEADER REUTILIZADO DA PÁGINA INICIAL -->
+    <header>
+      <div class="container">
+        <div class="logo-area">
+          <img src="../assets/logo-revista-histeria_31.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Menu de Navegação Secundário -->
+      <nav>
+        <div class="container">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="../html/index.html">Home</a></li>
+            <li class="nav-item">
+              <a href="../html/noticias.html">Notícias</a>
+            </li>
+            <li class="nav-item"><a href="../news.html">Colunas</a></li>
+            <li class="nav-item"><a href="../news.html">Eventos</a></li>
+            <li class="nav-item">
+              <a href="./news.html">História Histérica</a>
+            </li>
+
+            <!-- Dropdown Editorias -->
+            <li class="nav-item dropdown" id="editorias-dropdown">
+              <a href="javascript:void(0);" onclick="toggleDropdown()">
+                Editorias
+                <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
+              </a>
+              <ul class="dropdown-menu" id="editorias-menu">
+                <li><a href="../news.html">Cinema/TV</a></li>
+                <li><a href="../news.html">Música</a></li>
+                <li><a href="../news.html">Literatura</a></li>
+                <li><a href="../news.html">Teatro</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article-page">
+      <div class="container">
+        <!-- Título da Notícia -->
+        <h1 class="article-page-title">
+          <span class="category">LITERATURA</span>
+          O Livro que Virou Mania: Por que a Distopia Pop Está de Volta
+        </h1>
+
+        <!-- Imagem em Destaque -->
+        <div class="article-header-image">
+          <!-- A imagem de fundo está definida no styles_news.css -->
+        </div>
+
+        <!-- Metadata -->
+        <div
+          class="article-body"
+          style="text-align: center; margin-bottom: 40px; color: #777"
+        >
+          <p>Por **T. G. Book** | Publicado em 3 de Dezembro de 2025</p>
+        </div>
+
+        <!-- Corpo do Artigo -->
+        <div class="article-body">
+          <p>
+            O gênero distópico, que fez um sucesso estrondoso no início dos anos
+            2010 com franquias cinematográficas de sucesso, está vivendo um
+            renascimento surpreendente. Longe dos grandes estúdios, o fenômeno
+            está sendo impulsionado por uma nova geração de autores
+            independentes e, crucialmente, pelo poder de viralização das redes
+            sociais, especialmente o TikTok.
+          </p>
+
+          <h3>O Efeito TikTok</h3>
+
+          <p>
+            A plataforma de vídeos curtos se tornou o novo motor de vendas para
+            a indústria editorial. Leitores e influenciadores de "BookTok" têm a
+            capacidade de catapultar um livro desconhecido para o topo das
+            listas de mais vendidos em questão de dias. A nova distopia pop se
+            diferencia das antecessoras por focar menos em grandes guerras
+            políticas e mais nas crises de identidade e na pressão social das
+            personagens centrais.
+          </p>
+
+          <h3>Crise de Identidade e Pressão Social</h3>
+
+          <p>
+            Os novos enredos distópicos exploram temas como a vigilância
+            tecnológica extrema, a precarização do trabalho e o colapso
+            ambiental, espelhando medos reais da Geração Z. A sensação de
+            impotência frente a sistemas gigantescos é um ponto de conexão
+            forte, tornando as narrativas mais íntimas e menos focadas em heróis
+            que salvam o mundo inteiro.
+          </p>
+
+          <h3>Para Onde Vamos?</h3>
+
+          <p>
+            Este ressurgimento indica que o público jovem ainda anseia por
+            histórias que, apesar de sombrias, ofereçam um vislumbre de
+            resistência e esperança. A Revista Histeria recomenda três títulos
+            desta nova onda para quem quer mergulhar neste universo renovado de
+            crítica social e aventura.
+          </p>
+
+          <p
+            style="
+              margin-top: 50px;
+              font-style: italic;
+              color: var(--color-primary);
+              font-family: 'Lemon Milk', sans-serif;
+              text-align: right;
+            "
+          >
+            Este artigo é uma análise da Revista Histeria.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER REUTILIZADO DA PÁGINA INICIAL -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="../assets/logo-revista-histeria_31.png" alt="" />
+            </div>
+            <p style="font-size: 0.9rem">
+              Sua fonte diária e definitiva de notícias sobre cultura pop,
+              música, cinema, livros e muito mais.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navegação</h4>
+            <ul class="footer-list">
+              <li><a href="./news.html">Notícias</a></li>
+              <li><a href="./news.html">Colunas</a></li>
+              <li><a href="./news.html">Eventos</a></li>
+              <li><a href="./news.html">História Histérica</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Editorias</h4>
+            <ul class="footer-list">
+              <li><a href="./news.html">Cinema/TV</a></li>
+              <li><a href="./news.html">Música</a></li>
+              <li><a href="./news.html">Literatura</a></li>
+              <li><a href="./news.html">Teatro</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+              <a
+                href="https://instagram.com/seurealinstagram"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://facebook.com/seurealfacebook"
+                target="_blank"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com/seurealtwitter"
+                target="_blank"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">
+          &copy; 2025 Sua Revista Pop. Todos os direitos reservados. Design e
+          Conteúdo por [Seu Nome/Empresa].
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS (incluído para manter o dropdown e outras funcionalidades) -->
+    <script src="../script.js"></script>
+  </body>
+</html>

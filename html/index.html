@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sua Revista Pop - Cultura Jovem e Dinâmica</title>
+    <!-- Incluindo a fonte Inter do Google Fonts para um visual moderno e limpo -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Incluindo Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <!-- ---------------------------------
+        [Pasta: /components]
+        [Arquivo: header.html]
+        --------------------------------- -->
+    <header>
+      <div class="container">
+        <div class="logo-area">
+          <img src="../assets/logo-revista-histeria_31.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Menu de Navegação Secundário -->
+      <nav>
+        <div class="container">
+          <ul class="nav-list">
+            <!-- LINK ATUALIZADO: Agora aponta para a nova página news.html -->
+            <li class="nav-item"><a href="noticias.html">Notícias</a></li>
+            <!-- Os demais links permanecem como âncoras/placeholders para futuras páginas -->
+            <li class="nav-item"><a href="news.html">Colunas</a></li>
+            <li class="nav-item"><a href="news.html">Eventos</a></li>
+            <li class="nav-item">
+              <a href="news.html">História Histérica</a>
+            </li>
+
+            <!-- Dropdown Editorias -->
+            <li class="nav-item dropdown" id="editorias-dropdown">
+              <a href="javascript:void(0);" onclick="toggleDropdown()">
+                Editorias
+                <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
+              </a>
+              <ul class="dropdown-menu" id="editorias-menu">
+                <!-- Links das Editorias (agora apontam para a página de lista de notícias) -->
+                <li><a href="news.html">Cinema/TV</a></li>
+                <li><a href="news.html">Música</a></li>
+                <li><a href="news.html">Literatura</a></li>
+                <li><a href="news.html">Teatro</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Carrossel de Notícias em Destaque - AGORA NO INÍCIO DO MAIN -->
+      <div class="carousel-container">
+        <div class="carousel-track" id="news-carousel-track">
+          <!-- Slide 1 (Exemplo de Destaque 1 - Música) -->
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/181818/FF69B4?text=DESTAQUE+1+-+MÚSICA');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">MÚSICA</span>
+              <h2>ADIPISTING ELIT SED DO EIUSMOD TEMPOR</h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+          <!-- Slide 2 (Exemplo de Destaque 2 - Cinema/TV) -->
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/2C2C2C/FF69B4?text=DESTAQUE+2+-+CINEMA');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">CINEMA/TV</span>
+              <h2>
+                NOVO FILME DE FICÇÃO CIENTÍFICA PROMETE REVOLUCIONAR O GÊNERO
+              </h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+          <!-- Slide 3 (Exemplo de Destaque 3 - Eventos) -->
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/3E3E3E/FF69B4?text=DESTAQUE+3+-+EVENTOS');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">EVENTOS</span>
+              <h2>INGRESSOS PARA O MAIOR FESTIVAL POP SE ESGOTAM EM MINUTOS</h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control prev" onclick="moveCarousel(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next" onclick="moveCarousel(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- ---------------------------------
+              [Pasta: /pages/home]
+              [Arquivo: main-articles.html]
+              PRIMEIRA SEÇÃO: Principais Notícias (Layout 1 Grande + 2 Pequenos como na imagem)
+              --------------------------------- -->
+      <section class="main-articles">
+        <div class="container">
+          <!-- Título com linha de destaque na parte inferior -->
+          <h2 class="section-title">
+            Principais
+            <span style="color: var(--color-secondary)">Notícias</span>
+          </h2>
+
+          <div class="grid">
+            <!-- Card Principal (Feature - Ocupa 2/3 da Largura) -->
+            <a href="news.html" class="main-feature-card">
+              <div class="image-placeholder">
+                <h3 class="feature-title">DESTAQUE MÚSICA</h3>
+              </div>
+              <div class="content">
+                <!-- Tags invertidas, como na imagem de referência -->
+                <p class="category-tag">EVENTO | DESTAQUE</p>
+                <h4 class="article-title">
+                  UT ENIM AD MINIM VENIAM QUIS NOSTRUD EXERCITATION
+                </h4>
+                <p class="article-author">Por P. Ipsum</p>
+                <span class="read-more"
+                  >Leia Mais <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+
+            <!-- Coluna Lateral com dois cards (Ocupa 1/3 da Largura) -->
+            <div class="side-articles-stack">
+              <!-- Side Card 1 -->
+              <a href="news.html" class="side-article-card">
+                <div
+                  class="side-image-placeholder"
+                  style="background-color: #eaeaea"
+                >
+                  Musica 2
+                </div>
+                <div class="side-content">
+                  <p class="category-tag">Música</p>
+                  <h4 class="article-title">
+                    ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT
+                  </h4>
+                  <p class="article-author">Por B. Dolores</p>
+                  <span class="read-more"
+                    >Leia Mais <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </a>
+
+              <!-- Side Card 2 -->
+              <a href="news.html" class="side-article-card">
+                <div
+                  class="side-image-placeholder"
+                  style="background-color: #c0c0c0"
+                >
+                  Musica 3
+                </div>
+                <div class="side-content">
+                  <p class="category-tag">Música</p>
+                  <h4 class="article-title">
+                    DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT
+                  </h4>
+                  <p class="article-author">Por C. Sit</p>
+                  <span class="read-more"
+                    >Leia Mais <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /pages/home]
+              [Arquivo: music-events.html]
+              SEÇÃO 2: Músicas & Eventos (Estilo NOVO e VIBRANTE - MANTIDO)
+              --------------------------------- -->
+      <section class="music-events">
+        <div class="container">
+          <h2 class="section-title">
+            Música <span style="color: var(--color-primary)"> & Eventos</span>
+          </h2>
+          <div class="music-events-grid">
+            <!-- Card Música Nova -->
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Música Nova</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>MÚSICA</strong> | HOJE</p>
+                <h4>Artista XYZ Lança Single Surpresa e Agita as Redes</h4>
+                <p>
+                  Uma análise completa sobre o novo trabalho que quebrou
+                  recordes de streaming em poucas horas.
+                </p>
+              </div>
+            </a>
+
+            <!-- Card Festival Pop -->
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Festival Pop</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>EVENTOS</strong> | FESTIVAIS</p>
+                <h4>Revelado o Line-up Completo do Pop Fest 2025</h4>
+                <p>
+                  Confira as atrações internacionais e nacionais que estarão
+                  presentes no maior evento do ano.
+                </p>
+              </div>
+            </a>
+
+            <!-- Card Show Exclusivo -->
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Show Exclusivo</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>EVENTOS</strong> | SHOWS</p>
+                <h4>
+                  Banda Ícone Anuncia Data Extra em Sua Turnê de Despedida
+                </h4>
+                <p>
+                  Onde e quando conseguir os últimos ingressos para esta
+                  apresentação histórica.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /pages/home]
+              [Arquivo: cultura-foco.html]
+              SEÇÃO 3: Cultura em Foco (Estilo Arrojado - MANTIDO)
+              --------------------------------- -->
+      <section class="featured-section cultura-foco">
+        <div class="container">
+          <h2 class="section-title">
+            Cultura <span style="color: var(--color-primary)">Em Foco</span>
+          </h2>
+          <div class="cultura-foco-grid">
+            <!-- Bloco 1 -->
+            <a href="news.html" class="cultura-foco-card">
+              <h4>O Renascimento dos Jogos Retrô</h4>
+              <p>
+                Por que a nostalgia está impulsionando a indústria de games e
+                quais títulos de 8 e 16 bits estão voltando à moda.
+              </p>
+            </a>
+
+            <!-- Bloco 2 -->
+            <a href="news.html" class="cultura-foco-card">
+              <h4>A Moda Sustentável no Tapete Vermelho</h4>
+              <p>
+                Entenda como celebridades estão usando seu status para promover
+                a conscientização ambiental na alta costura.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /pages/home]
+              [Arquivo: historia-histerica.html]
+              SEÇÃO 4: História Histérica (Estrutura e Estilo Corrigidos - MANTIDO)
+              --------------------------------- -->
+      <section class="historia-histerica">
+        <div class="container">
+          <h2 class="section-title">
+            Histeria <span style="color: var(--color-secondary)">PODCAST</span>
+          </h2>
+          <iframe
+            class="spotify-if1"
+            data-testid="embed-iframe"
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/track/3l8ACerUtJfRd0rxJJ4Gkx?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+          <div class="spotify-container">
+            <iframe
+              class="spotify-if2"
+              data-testid="embed-iframe"
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/track/4au0grwuQZg2UUVnh0sKW8?utm_source=generator&theme=0"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+
+            <iframe
+              class="spotify-if2"
+              data-testid="embed-iframe"
+              style="border-radius: 12px"
+              src="https://open.spotify.com/embed/track/1hSMw66wX8X6yNhLdCasAA?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /pages/home]
+              [Arquivo: literatura-reviews.html]
+              SEÇÃO 5: Resenhas de Literatura
+              --------------------------------- -->
+      <section class="literatura-section">
+        <div class="container">
+          <h2 class="section-title">
+            Resenhas De
+            <span style="color: var(--color-secondary)">Literatura</span>
+          </h2>
+          <div class="literatura-grid">
+            <!-- Card 1 -->
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-book-open"></i></div>
+              <h4>A Distopia Esquecida</h4>
+              <small>Um clássico moderno redescoberto.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-feather-alt"></i></div>
+              <h4>Poemas da Meia-Noite</h4>
+              <small>A nova voz da poesia urbana.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-user-astronaut"></i></div>
+              <h4>Biografia do Gênio Pop</h4>
+              <small>Os altos e baixos da maior estrela.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /components]
+              [Arquivo: newsletter-form.html]
+              SEÇÃO 6: Formulário de E-mail Criativo
+              --------------------------------- -->
+      <section class="newsletter-section">
+        <div class="container">
+          <h2>Não Perca Nada, <span style="color: #fff">Assine!</span></h2>
+          <p>
+            Receba as notícias mais quentes da cultura pop diretamente na sua
+            caixa de entrada.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              placeholder="Digite seu melhor e-mail pop aqui..."
+              required
+            />
+            <button type="submit">Quero Receber Notícias</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ---------------------------------
+              [Pasta: /components]
+              [Arquivo: instagram-feed.html]
+              SEÇÃO 7: Carrossel de Posts do Instagram
+              --------------------------------- -->
+      <section class="instagram-section">
+        <div class="container">
+          <h2 class="insta-title">
+            Siga a <span class="pop-highlight"> Revista Histeria</span> no
+            Insta!
+          </h2>
+          <div class="insta-carousel-wrapper">
+            <div class="insta-carousel" id="insta-carousel">
+              <!-- Post 1: Música -->
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url(../assets/insta\ teste/a.png)"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Música | Os 5 álbuns que definiram a década! Já ouviu
+                    todos?
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+
+              <!-- Post 2: Filmes -->
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url(../assets/insta\ teste/b.png)"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Cinema | Crítica: O novo filme de ficção científica é um
+                    épico!
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+
+              <!-- Post 3: Livros -->
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url(../assets/insta\ teste/f.png)"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Literatura | 3 livros que todo fã de fantasia PRECISA ler.
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+
+              <!-- Post 4: Eventos -->
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url(../assets/insta\ teste/d.png)"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Eventos | Cobertura exclusiva do último show em São Paulo!
+                    🤘
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+
+              <!-- Post 5: Teatro -->
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url(../assets/insta\ teste/e.png)"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Teatro | Dica cultural da semana: Uma peça imperdível.
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Botões de navegação do carrossel do Insta -->
+            <button
+              class="insta-nav prev"
+              id="insta-prev"
+              aria-label="Anterior"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="insta-nav next" id="insta-next" aria-label="Próximo">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---------------------------------
+        [Pasta: /components]
+        [Arquivo: footer.html]
+        --------------------------------- -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="../assets/logo-revista-histeria_31.png" alt="" />
+            </div>
+            <p style="font-size: 0.9rem">
+              Sua fonte diária e definitiva de notícias sobre cultura pop,
+              música, cinema, livros e muito mais.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navegação</h4>
+            <ul class="footer-list">
+              <li><a href="news.html">Notícias</a></li>
+              <li><a href="news.html">Colunas</a></li>
+              <li><a href="news.html">Eventos</a></li>
+              <li><a href="news.html">História Histérica</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Editorias</h4>
+            <ul class="footer-list">
+              <li><a href="news.html">Cinema/TV</a></li>
+              <li><a href="news.html">Música</a></li>
+              <li><a href="news.html">Literatura</a></li>
+              <li><a href="news.html">Teatro</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+              <a
+                href="https://instagram.com/seurealinstagram"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://facebook.com/seurealfacebook"
+                target="_blank"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com/seurealtwitter"
+                target="_blank"
+                aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">
+          &copy; 2025 Sua Revista Pop. Todos os direitos reservados. Design e
+          Conteúdo por [Seu Nome/Empresa].
+        </p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

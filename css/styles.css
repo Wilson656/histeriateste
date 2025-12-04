@@ -1,0 +1,1142 @@
+/* CONFIGURAÇÕES GLOBAIS E REINICIALIZAÇÃO */
+@font-face {
+  font-family: "Lemon Milk";
+  src: url("/assets/fonts/LemonMilk-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Lemon Milk";
+  src: url("/assets/fonts/LemonMilk-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+:root {
+  --color-primary: #ff69b4; /* Rosa Choque */
+  --color-secondary: #4a2e2c; /* Marrom Escuro */
+  --color-tertiary: #a0522d; /* Marrom Terra */
+  --color-background: #fff6ce;
+  --color-text: #333333;
+  --color-light: #f8f8f8;
+  --font-family-primary: "Inter", sans-serif;
+  --color-light-pink: #fff5f8; /* Rosa bem claro para fundo de cards */
+  --color-gradient-start: #ffdab9; /* Pêssego Claro para gradiente */
+  --color-gradient-end: #ff69b4; /* Rosa Choque */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lemon Milk", sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h2 {
+  font-family: "Lemon Milk", sans-serif;
+}
+
+a {
+  font-family: "Lemon Milk", sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* UTILITÁRIOS */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 5px solid var(--color-primary);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.section-title span {
+  color: var(--color-primary);
+  margin-left: 10px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+/* Ajuste para o título da História Histérica, seguindo a ref. */
+.historia-histerica .section-title {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+/* ---------------------------------
+           [Pasta: /components]
+           [Arquivo: header.css]
+           --------------------------------- */
+header {
+  background-color: var(--color-background);
+  padding-top: 20px;
+}
+
+.logo-area {
+  text-align: center;
+  margin-bottom: 0px; /* Menos margem para aproximar da nav */
+}
+
+.logo-area img {
+  height: auto;
+  width: 350px;
+  /* Menos margem para aproximar da nav */
+}
+
+.logo-area .tagline {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.logo-area .logo {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-area .logo .rev {
+  color: var(--color-primary);
+  margin-right: 5px;
+  font-weight: 900;
+}
+
+/* Menu de Navegação - MOVIDO ABAIXO DA LOGO */
+nav {
+  background-color: var(--color-background); /* Fundo branco ou claro */
+  padding: 15px 0;
+  border-top: 1px solid var(--color-light);
+  border-bottom: 1px solid var(--color-light);
+  margin-bottom: 0; /* Remove margem inferior da nav, carrossel vem logo abaixo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-item a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  padding: 10px 0;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-item a:hover {
+  color: var(--color-primary);
+}
+
+/* Dropdown Editorias */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-background);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+  min-width: 150px;
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transform: translate(-50%, 10px);
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
+
+/* ---------------------------------
+           [Pasta: /components]
+           [Arquivo: news-carousel.css]
+           --------------------------------- */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  height: 500px; /* Altura fixa para o carrosel do header */
+  position: relative;
+  background-color: #000;
+  /* Garante que o carrossel comece logo abaixo da nav */
+  margin-top: 0;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 40px;
+}
+
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.slide-content {
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+}
+
+.slide-content .category {
+  background-color: var(--color-primary);
+  color: #000;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.slide-content h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  font-weight: 900;
+}
+
+.slide-content .explore-btn {
+  background-color: var(--color-primary);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.slide-content .explore-btn:hover {
+  background-color: #e05e9c;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 15px 10px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+  left: 20px;
+}
+
+.carousel-control.next {
+  right: 20px;
+}
+
+/* ---------------------------------
+           [Pasta: /pages/home]
+           [Arquivo: main-articles.css]
+           ESTILO ATUALIZADO: Principais Notícias (REFEITO - Layout 1 Grande + 2 Pequenos como na imagem)
+           --------------------------------- */
+.main-articles {
+  padding: 60px 0;
+  background-image: url(../assets/fundo\ texture.png);
+}
+
+.main-articles .section-title {
+  /* Estilo do título baseado na imagem (com linha rosa) */
+  border-left: none; /* Remove a borda padrão */
+  padding-left: 0;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 30px; /* Mais margem para separar da linha e do conteúdo */
+  position: relative;
+  line-height: 1.2;
+}
+
+.main-articles .section-title span {
+  /* Para o 'de música' se o título fosse assim, mantendo a span para consistência */
+  color: var(--color-text);
+}
+
+/* Adiciona a linha rosa inferior ao título */
+.main-articles .section-title::after {
+  content: "";
+  display: block;
+  width: 250px; /* Largura da linha */
+  height: 5px;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: -10px; /* Posição abaixo do texto */
+  left: 0;
+}
+
+/* Layout Grid Principal: 1 Grande + 2 Pequenos */
+.main-articles .grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2/3 para o destaque, 1/3 para a lateral */
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .main-articles .grid {
+    grid-template-columns: 1fr; /* Coluna única em telas menores */
+  }
+}
+
+/* --- 1. CARD PRINCIPAL (FEATURE) --- */
+.main-feature-card {
+  display: block;
+  background-color: var(--color-secondary); /* Fundo escuro */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.main-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5); /* Sombra pop no hover */
+}
+
+.main-feature-card .image-placeholder {
+  height: 450px; /* Grande altura */
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 900;
+  position: relative;
+  background-image: url("https://placehold.co/800x450/333333/FFFFFF?text=DESTAQUE+POP");
+  background-size: cover;
+  background-position: center;
+
+  /* Adiciona a linha rosa no rodapé da imagem */
+  border-bottom: 8px solid var(--color-primary);
+}
+
+.main-feature-card .image-placeholder .feature-title {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.main-feature-card .content {
+  padding: 25px 30px;
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.main-feature-card .category-tag {
+  font-size: 0.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 2px 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.main-feature-card .article-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.main-feature-card .article-author {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.main-feature-card .read-more {
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: margin-left 0.3s;
+  display: block; /* Garante que o link ocupe sua própria linha */
+}
+
+.main-feature-card:hover .read-more {
+  margin-left: 5px;
+}
+
+/* --- 2. ARTIGOS LATERAIS (STACK) --- */
+.side-articles-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.side-article-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light); /* Fundo cinza claro */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-grow: 1; /* Para que ocupem o espaço vertical disponível */
+}
+
+.side-article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+}
+
+.side-article-card .side-image-placeholder {
+  height: 150px;
+  background-color: #eaeaea; /* Cinza bem claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.side-article-card .side-content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.side-article-card .category-tag {
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.side-article-card .article-title {
+  font-size: 1.1rem; /* Aumentado um pouco para legibilidade */
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  color: var(--color-text);
+}
+
+.side-article-card .article-author {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.side-article-card .read-more {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+.side-article-card .read-more i {
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.side-article-card:hover .read-more i {
+  transform: translateX(5px);
+}
+
+/* ---------------------------------
+           [Pasta: /pages/home]
+           [Arquivo: music-events.css]
+           ESTILO ATUALIZADO: Música & Eventos (Estilo NOVO e VIBRANTE - MANTIDO)
+           --------------------------------- */
+.music-events {
+  padding: 80px 0;
+  background-image: url(../assets/creak\ board.png);
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Mantém o foco no centro */
+  background-repeat: no-repeat; /* Evita repetição */
+}
+
+.music-events .section-title {
+  color: #fff;
+  border-left-color: var(--color-primary);
+}
+
+.music-events .section-title span {
+  color: var(--color-primary);
+}
+
+.music-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.me-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background-color: var(--color-background); /* Fundo interno escuro */
+}
+
+.me-card:hover {
+  transform: scale(1.05) rotate(-0.5deg); /* Mais zoom e leve rotação */
+  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.5);
+}
+
+.me-card-image {
+  height: 250px; /* Altura mantida */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* Efeito de sobreposição gradiente */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    var(--card-bg-color);
+}
+
+/* Cores de fundo dinâmicas para o impacto visual */
+.me-card:nth-child(1) .me-card-image {
+  --card-bg-color: #9b9b9b; /* Violeta */
+}
+.me-card:nth-child(2) .me-card-image {
+  --card-bg-color: #9b9b9b; /* Laranja/Vermelho */
+}
+.me-card:nth-child(3) .me-card-image {
+  --card-bg-color: #9b9b9b; /* Verde-Mar */
+}
+
+.me-card-image span {
+  z-index: 2; /* Mantém o texto visível */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.me-card-content {
+  background-color: var(--color-background);
+  padding: 25px;
+  border-top: 5px solid var(--color-primary); /* Borda superior rosa */
+  border-radius: 0 0 16px 16px;
+}
+
+.me-card-content .tags {
+  font-size: 0.8rem;
+  color: var(--color-secondary); /* Tags mais escuras */
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.me-card-content .tags strong {
+  color: var(--color-primary);
+}
+
+.me-card-content h4 {
+  font-size: 1.3rem; /* Título maior */
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.me-card-content p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------
+           [Pasta: /pages/home]
+           [Arquivo: feature-sections.css]
+           ESTILO: Cultura em Foco (Mantido)
+           --------------------------------- */
+.featured-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fff3fa 100%);
+}
+
+.cultura-foco {
+  background: linear-gradient(180deg, #ffffff 0%, #fcf1f7 100%);
+}
+
+.cultura-foco .section-title {
+  border-left-color: var(--color-secondary); /* Troca a cor da borda */
+}
+
+.cultura-foco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* Mais espaço entre os blocos */
+}
+
+.cultura-foco-card {
+  background-color: var(--color-secondary); /* Fundo escuro */
+  color: #fff;
+  border-radius: 12px;
+  padding: 40px; /* Mais padding */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid var(--color-primary); /* Borda rosa de destaque */
+}
+
+.cultura-foco-card:hover {
+  transform: scale(1.03);
+  background-color: #5d3a37; /* Escurece um pouco no hover */
+}
+
+/* Adicionar um ícone/emoji discreto no canto */
+.cultura-foco-card::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: -93px;
+  width: 217px;
+  height: 88px;
+  background-image: url(../assets/icone-revista-histeria_7.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.cultura-foco-card h4 {
+  font-size: 1.8rem; /* Título maior */
+  color: var(--color-primary); /* Título em rosa */
+  margin-bottom: 15px;
+  font-weight: 900;
+}
+
+.cultura-foco-card p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* ESTILO: História Histérica (Mantido) */
+.historia-histerica {
+  padding: 60px 0;
+  background-image: url(../assets/fundo\ texture.png);
+}
+
+.spotify-if1 {
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.spotify-container {
+  display: flex;
+  gap: 150px;
+}
+
+.spotify-if2 {
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.historia-item {
+  padding: 20px;
+  background-color: var(
+    --color-light-pink
+  ); /* Fundo rosa claro, como na ref. */
+  border-radius: 8px;
+  min-height: 120px; /* Altura mínima para alinhamento visual */
+  transition: box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.historia-item:hover {
+  background-color: #fff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.historia-item .link-title {
+  font-weight: 800;
+  color: var(--color-secondary); /* Cor escura para o título */
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.historia-item .link-title:hover {
+  color: var(--color-primary); /* Rosa no hover */
+}
+
+.historia-item p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ---------------------------------
+           [Pasta: /pages/home]
+           [Arquivo: literatura-section.css]
+           --------------------------------- */
+.literatura-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fcf1f7 100%);
+}
+
+.literatura-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.resenha-card {
+  background-color: var(--color-background);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.resenha-card:hover {
+  transform: scale(1.02);
+}
+
+.resenha-card .icon {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.resenha-card h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin-bottom: 5px;
+}
+
+.resenha-card small {
+  color: #999;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.resenha-card .read-link {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-primary);
+  transition: opacity 0.3s;
+}
+
+.resenha-card .read-link:hover {
+  opacity: 0.8;
+}
+
+/* ---------------------------------
+           [Pasta: /components]
+           [Arquivo: email-form.css]
+           --------------------------------- */
+.newsletter-section {
+  padding: 80px 0;
+  background-image: url(../assets/creak\ board.png);
+  color: #fff;
+  text-align: center;
+}
+
+.newsletter-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+  color: var(--color-primary);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.newsletter-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form input[type="email"] {
+  flex-grow: 1;
+  padding: 15px 25px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  color: var(--color-text);
+}
+
+.newsletter-form button {
+  background-color: var(--color-primary);
+  color: #000;
+  padding: 15px 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #ff85c6;
+}
+
+/* ---------------------------------
+           [Pasta: /components]
+           [Arquivo: instagram-feed.css]
+           --------------------------------- */
+.instagram-section {
+  padding: 60px 0;
+  background-image: url(../assets/fundo\ texture.png);
+}
+
+.insta-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.insta-title .pop-highlight {
+  color: var(--color-primary);
+}
+
+.insta-carousel-wrapper {
+  position: relative;
+  padding: 0 60px; /* Espaço para as setas */
+}
+
+.insta-carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+  /* Esconde a barra de rolagem nativa */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.insta-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.insta-post {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background-color: var(--color-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s;
+}
+
+.insta-post:hover {
+  transform: scale(1.02);
+}
+
+.post-image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  /* Imagem de fundo simulada */
+  background-size: cover;
+  background-position: center;
+}
+
+.post-content {
+  z-index: 1;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+  color: #fff;
+}
+
+.post-content .hashtag {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+}
+
+.post-content .link {
+  font-size: 0.8rem;
+  color: #ccc;
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.insta-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-text);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s, color 0.3s;
+  z-index: 10;
+}
+
+.insta-nav:hover {
+  background: var(--color-primary);
+  color: #000;
+}
+
+.insta-nav.prev {
+  left: 0;
+}
+
+.insta-nav.next {
+  right: 0;
+}
+
+/* ---------------------------------
+           [Pasta: /components]
+           [Arquivo: footer.css]
+           --------------------------------- */
+footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 0;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-section img {
+  height: auto;
+  width: 250px;
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+}
+
+.footer-list a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-list a:hover {
+  color: var(--color-primary);
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .nav-list {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .nav-item a {
+    font-size: 0.8rem;
+  }
+  .carousel-slide {
+    height: 400px;
+  }
+  .slide-content h2 {
+    font-size: 2rem;
+  }
+  .cultura-foco-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-articles .grid {
+    grid-template-columns: 1fr; /* Coluna única em telas menores */
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .carousel-slide {
+    height: 300px;
+    padding: 20px;
+  }
+  .slide-content h2 {
+    font-size: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    padding-left: 10px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+  .newsletter-form button {
+    border-radius: 0 0 10px 10px;
+  }
+  .insta-carousel-wrapper {
+    padding: 0 20px;
+  }
+  .insta-nav {
+    display: none; /* Esconde botões de navegação no mobile */
+  }
+}
