@@ -1,3 +1,8 @@
+/* ==========================================================================
+   IMPORTAÇÃO DE FONTES (Adicionado para as Carteiras)
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;700&family=Permanent+Marker&family=Great+Vibes&display=swap");
+
 /* CONFIGURAÇÕES GLOBAIS E REINICIALIZAÇÃO */
 @font-face {
   font-family: "Lemon Milk";
@@ -84,9 +89,9 @@ h2 {
 }
 
 /* ---------------------------------
-           [Pasta: /components]
-           [Arquivo: header.css]
-           --------------------------------- */
+            [Pasta: /components]
+            [Arquivo: header.css]
+            --------------------------------- */
 header {
   background-color: var(--color-background);
   padding-top: 20px;
@@ -209,9 +214,9 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /components]
-           [Arquivo: news-carousel.css]
-           --------------------------------- */
+            [Pasta: /components]
+            [Arquivo: news-carousel.css]
+            --------------------------------- */
 .carousel-container {
   overflow: hidden;
   width: 100%;
@@ -316,10 +321,10 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /pages/home]
-           [Arquivo: main-articles.css]
-           ESTILO ATUALIZADO: Principais Notícias (REFEITO - Layout 1 Grande + 2 Pequenos como na imagem)
-           --------------------------------- */
+            [Pasta: /pages/home]
+            [Arquivo: main-articles.css]
+            ESTILO ATUALIZADO: Principais Notícias (REFEITO - Layout 1 Grande + 2 Pequenos como na imagem)
+            --------------------------------- */
 .main-articles {
   padding: 60px 0;
   background-image: url(../assets/fundo\ texture.png);
@@ -534,16 +539,18 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /pages/home]
-           [Arquivo: music-events.css]
-           ESTILO ATUALIZADO: Música & Eventos (Estilo NOVO e VIBRANTE - MANTIDO)
-           --------------------------------- */
+            [Pasta: /pages/home]
+            [Arquivo: music-events.css]
+            ESTILO ATUALIZADO: Música & Eventos (Estilo NOVO e VIBRANTE - MANTIDO)
+            --------------------------------- */
 .music-events {
-  padding: 80px 0;
+  padding: 200px 0;
   background-image: url(../assets/creak\ board.png);
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Mantém o foco no centro */
-  background-repeat: no-repeat; /* Evita repetição */
+  align-items: center;
+
+  background-position: center;
+  background-size: contain;
+  min-height: 100vh;
 }
 
 .music-events .section-title {
@@ -646,10 +653,10 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /pages/home]
-           [Arquivo: feature-sections.css]
-           ESTILO: Cultura em Foco (Mantido)
-           --------------------------------- */
+            [Pasta: /pages/home]
+            [Arquivo: feature-sections.css]
+            ESTILO: Cultura em Foco (Mantido)
+            --------------------------------- */
 .featured-section {
   padding: 60px 0;
   background: linear-gradient(180deg, #ffffff 0%, #fff3fa 100%);
@@ -713,98 +720,256 @@ nav {
   font-size: 1rem;
 }
 
-/* ESTILO: História Histérica (Mantido) */
-.historia-histerica {
-  padding: 60px 0;
-  background-image: url(../assets/fundo\ texture.png);
-}
+/* ==========================================================================
+   CARTEIRAS (ID CARDS) - INSERIDO AQUI
+   ========================================================================== */
 
-.container-if1 {
-  width: 100%;
-  max-width: 5000px;
-  margin: 40px auto;
-  padding: 0;
-  border: 6px solid white; /* borda colagem */
-  border-radius: 20px; /* arredondado */
-  overflow: hidden; /* corta o iframe */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-}
-.container-if2 {
-  width: 100%;
-  max-width: 5000px;
-  margin: 40px auto;
-  padding: 0;
-  border: 6px solid white; /* borda colagem */
-  border-radius: 20px; /* arredondado */
-  overflow: hidden; /* corta o iframe */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-}
-.container-if3 {
-  width: 100%;
-  max-width: 5000px;
-  margin: 40px auto;
-  padding: 0;
-  border: 6px solid white; /* borda colagem */
-  border-radius: 20px; /* arredondado */
-  overflow: hidden; /* corta o iframe */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-}
-
-.spotify-if1 {
-  width: 100%;
-  height: 352px;
-  border: none;
-  display: block;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 80);
-}
-
-.spotify-container {
+/* Container específico das carteiras para não bugar o site */
+.cards-container {
   display: flex;
-  gap: 150px;
-}
-
-.spotify-if2 {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
   width: 100%;
-  height: 352px;
-  border: none;
-  display: block;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 80);
+  margin: 40px 0;
 }
 
-.spotify-if3 {
+/* --- CARD ESTILO ZINE / COLAGEM --- */
+.id-card {
+  width: 500px;
+  height: 400px;
+  /* Fundo do card (Papel Off-white) */
+  background-color: #fffbf0;
+  border: 3px solid #000;
+  position: relative;
+  overflow: hidden;
+  /* Sombra fixa na cor primária (Rosa) */
+  box-shadow: 12px 12px 0px var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  font-family: "Courier Prime", monospace; /* Fonte exclusiva da carteira */
+}
+
+/* Garante que tudo dentro do card use a fonte correta */
+.id-card * {
+  font-family: "Courier Prime", monospace;
+}
+
+.id-card:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  z-index: 10;
+}
+
+/* Fundo de estrelas */
+.id-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23ccc'%3E★%3C/text%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Explosões de fundo */
+.bg-explosion {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+  opacity: 0.15;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.expl-1 {
+  top: -30px;
+  left: -30px;
+  transform: rotate(-15deg);
+}
+.expl-2 {
+  bottom: -30px;
+  right: -20px;
+  transform: rotate(15deg);
+}
+
+/* --- CABEÇALHO INTERNO DO CARD --- */
+/* Nota: Seletor específico (.id-card .header) para não conflitar com o header do site */
+.id-card .header {
+  position: relative;
+  z-index: 5;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  transform: rotate(-0.5deg) scale(1.01);
+  width: 102%;
+  margin-left: -1%;
+  margin-top: 15px;
+  border-bottom: 3px solid var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id-card .header h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.id-card .header .badge {
+  background: var(--color-primary);
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  padding: 4px 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  transform: rotate(2deg);
+}
+
+/* --- CONTEÚDO DO CARD --- */
+.id-card .content {
+  display: flex;
+  padding: 20px;
+  height: 100%;
+  gap: 25px;
+  position: relative;
+  z-index: 5;
+}
+
+.id-card .photo-area {
+  width: 115px;
+  flex-shrink: 0;
+  position: relative;
+  transform: rotate(-2deg);
+}
+
+.id-card .photo-frame {
+  width: 115px;
+  height: 145px;
+  background: #fff;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid #222;
+}
+
+.id-card .photo-frame img {
   width: 100%;
-  height: 352px;
-  border: none;
-  display: block;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 80);
+  height: 100%;
+  object-fit: cover;
 }
 
-.btn-podcast {
-  background-color: #ff66b7;
+.id-card .tape {
+  position: absolute;
+  top: -12px;
+  left: 25%;
+  width: 60px;
+  height: 25px;
+  background-color: rgba(255, 0, 85, 0.8);
+  transform: rotate(-3deg);
+  z-index: 10;
+  opacity: 0.9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.id-card .info-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.id-card .name-container {
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.id-card .label {
+  font-family: "Oswald", sans-serif;
+  font-size: 9px;
+  background: #000;
+  color: #fff;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.id-card .value-name {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
   color: #000;
   font-weight: 700;
-  padding: 25px 100px;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  font-size: 25px;
-  display: block; /* necessário */
-  margin: 20px auto;
-}
-.btn-podcast i {
-  margin-right: 25px;
-  font-size: 35px;
+  display: block;
+  margin-top: 2px;
+  line-height: 1;
 }
 
-.btn-podcast:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
+.id-card .row {
+  display: flex;
+  gap: 15px;
+}
+
+.id-card .value {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.id-card .bio-box {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  font-style: italic;
+  position: relative;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.id-card .bio-box::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  width: 8px;
+  height: 25px;
+  border-radius: 10px;
+  border: 2px solid #444;
+  z-index: 20;
+}
+
+.id-card .footer {
+  margin-top: auto;
+  text-align: right;
+  padding-right: 5px;
+  background: transparent;
+  padding: 0;
+  border-top: none;
+}
+
+.id-card .signature {
+  font-family: "Great Vibes", cursive;
+  font-size: 24px;
+  color: var(--color-primary);
+  transform: rotate(-4deg);
 }
 
 /* ---------------------------------
-           [Pasta: /pages/home]
-           [Arquivo: literatura-section.css]
-           --------------------------------- */
+            [Pasta: /pages/home]
+            [Arquivo: literatura-section.css]
+            --------------------------------- */
 .literatura-section {
   padding: 60px 0;
   background: linear-gradient(180deg, #ffffff 0%, #fcf1f7 100%);
@@ -860,14 +1025,18 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /components]
-           [Arquivo: email-form.css]
-           --------------------------------- */
+            [Pasta: /components]
+            [Arquivo: email-form.css]
+            --------------------------------- */
 .newsletter-section {
   padding: 80px 0;
-  background-image: url(../assets/creak\ board.png);
+  background-image: url(../assets/newleader\ backgorund.png);
   color: #fff;
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 50vh;
 }
 
 .newsletter-section h2 {
@@ -920,9 +1089,9 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /components]
-           [Arquivo: instagram-feed.css]
-           --------------------------------- */
+            [Pasta: /components]
+            [Arquivo: instagram-feed.css]
+            --------------------------------- */
 .instagram-section {
   padding: 60px 0;
   background-image: url(../assets/fundo\ texture.png);
@@ -1047,9 +1216,9 @@ nav {
 }
 
 /* ---------------------------------
-           [Pasta: /components]
-           [Arquivo: footer.css]
-           --------------------------------- */
+            [Pasta: /components]
+            [Arquivo: footer.css]
+            --------------------------------- */
 footer {
   background-color: #111;
   color: #ccc;
