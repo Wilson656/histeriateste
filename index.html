@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sua Revista Pop - Cultura Jovem e Dinâmica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo-area">
+          <img
+            src="../assets/logo-revista-histeria_31.png"
+            alt="Logo Revista Histeria"
+          />
+        </div>
+      </div>
+
+      <nav>
+        <div class="container">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="./html/noticias.html">Notícias</a>
+            </li>
+            <li class="nav-item"><a href="news.html">Colunas</a></li>
+            <li class="nav-item"><a href="news.html">Eventos</a></li>
+            <li class="nav-item">
+              <a href="news.html">História Histérica</a>
+            </li>
+
+            <li class="nav-item dropdown" id="editorias-dropdown">
+              <a href="javascript:void(0);" onclick="toggleDropdown()">
+                Editorias
+                <i class="fas fa-chevron-down" id="dropdown-arrow"></i>
+              </a>
+              <ul class="dropdown-menu" id="editorias-menu">
+                <li><a href="news.html">Cinema/TV</a></li>
+                <li><a href="news.html">Música</a></li>
+                <li><a href="news.html">Literatura</a></li>
+                <li><a href="news.html">Teatro</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="carousel-container">
+        <div class="carousel-track" id="news-carousel-track">
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/181818/FF69B4?text=DESTAQUE+1+-+MÚSICA');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">MÚSICA</span>
+              <h2>ADIPISTING ELIT SED DO EIUSMOD TEMPOR</h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/2C2C2C/FF69B4?text=DESTAQUE+2+-+CINEMA');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">CINEMA/TV</span>
+              <h2>
+                NOVO FILME DE FICÇÃO CIENTÍFICA PROMETE REVOLUCIONAR O GÊNERO
+              </h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+          <div
+            class="carousel-slide"
+            style="
+              background-image: url('https://placehold.co/1200x500/3E3E3E/FF69B4?text=DESTAQUE+3+-+EVENTOS');
+            "
+          >
+            <div class="slide-content">
+              <span class="category">EVENTOS</span>
+              <h2>INGRESSOS PARA O MAIOR FESTIVAL POP SE ESGOTAM EM MINUTOS</h2>
+              <a href="news.html" class="explore-btn">EXPLORAR REPORTAGEM</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control prev" onclick="moveCarousel(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next" onclick="moveCarousel(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <section class="main-articles">
+        <div class="container">
+          <h2 class="section-title">
+            Principais
+            <span style="color: var(--color-secondary)">Notícias</span>
+          </h2>
+
+          <div class="grid">
+            <a href="news.html" class="main-feature-card">
+              <div class="image-placeholder">
+                <h3 class="feature-title">DESTAQUE MÚSICA</h3>
+              </div>
+              <div class="content">
+                <p class="category-tag">EVENTO | DESTAQUE</p>
+                <h4 class="article-title">
+                  UT ENIM AD MINIM VENIAM QUIS NOSTRUD EXERCITATION
+                </h4>
+                <p class="article-author">Por P. Ipsum</p>
+                <span class="read-more"
+                  >Leia Mais <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+
+            <div class="side-articles-stack">
+              <a href="news.html" class="side-article-card">
+                <div
+                  class="side-image-placeholder"
+                  style="background-color: #eaeaea"
+                >
+                  Musica 2
+                </div>
+                <div class="side-content">
+                  <p class="category-tag">Música</p>
+                  <h4 class="article-title">
+                    ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT
+                  </h4>
+                  <p class="article-author">Por B. Dolores</p>
+                  <span class="read-more"
+                    >Leia Mais <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </a>
+
+              <a href="news.html" class="side-article-card">
+                <div
+                  class="side-image-placeholder"
+                  style="background-color: #c0c0c0"
+                >
+                  Musica 3
+                </div>
+                <div class="side-content">
+                  <p class="category-tag">Música</p>
+                  <h4 class="article-title">
+                    DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT
+                  </h4>
+                  <p class="article-author">Por C. Sit</p>
+                  <span class="read-more"
+                    >Leia Mais <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="music-events">
+        <div class="container">
+          <h2 class="section-title">Música <span> & Eventos</span></h2>
+          <div class="music-events-grid">
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Música Nova</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>MÚSICA</strong> | HOJE</p>
+                <h4>Artista XYZ Lança Single Surpresa e Agita as Redes</h4>
+                <p>
+                  Uma análise completa sobre o novo trabalho que quebrou
+                  recordes de streaming em poucas horas.
+                </p>
+              </div>
+            </a>
+
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Festival Pop</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>EVENTOS</strong> | FESTIVAIS</p>
+                <h4>Revelado o Line-up Completo do Pop Fest 2025</h4>
+                <p>
+                  Confira as atrações internacionais e nacionais que estarão
+                  presentes no maior evento do ano.
+                </p>
+              </div>
+            </a>
+
+            <a href="news.html" class="me-card">
+              <div class="me-card-image" style="background-image: url('')">
+                <span>Show Exclusivo</span>
+              </div>
+              <div class="me-card-content">
+                <p class="tags"><strong>EVENTOS</strong> | SHOWS</p>
+                <h4>
+                  Banda Ícone Anuncia Data Extra em Sua Turnê de Despedida
+                </h4>
+                <p>
+                  Onde e quando conseguir os últimos ingressos para esta
+                  apresentação histórica.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-us">
+        <div class="container">
+          <h1 class="abt-title">Sobre nós</h1>
+        </div>
+
+        <div class="cards-container">
+          <div class="id-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-1"
+              alt="Pop"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-2"
+              alt="Pop"
+            />
+
+            <div class="header">
+              <h1>Histeria</h1>
+              <span class="badge">ANOON</span>
+            </div>
+
+            <div class="content">
+              <div class="photo-area">
+                <div class="tape" style="background-color: #ff69b4"></div>
+                <div class="photo-frame">
+                  <img src="" alt="Flavia" />
+                </div>
+              </div>
+
+              <div class="info-area">
+                <div class="name-container">
+                  <span class="label" style="background: #ff69b4; color: #000"
+                    >NOME</span
+                  >
+                  <span class="value-name">Flávia Paiva </span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <span class="label">Formação</span><br />
+                    <span class="value">
+                      Comunicação com habilitação em cinema
+                    </span>
+                  </div>
+                  <div>
+                    <span class="label">NASC.</span><br />
+                    <span class="value">18/12/2002</span>
+                  </div>
+                  <div>
+                    <span class="label">SIGNO</span><br />
+                    <span class="value">Sargitário</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="label">Filme da vida</span><br />
+                  <span class="value">Mary Poppins</span>
+                </div>
+
+                <div class="footer">
+                  <div class="signature">Flávia Paiva</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="id-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-1"
+              alt="Pop"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-2"
+              alt="Pop"
+            />
+
+            <div class="header">
+              <h1>Histeria</h1>
+              <span class="badge" style="background: #e0b0ff">Annon</span>
+            </div>
+
+            <div class="content">
+              <div class="photo-area" style="transform: rotate(1deg)">
+                <div class="tape" style="background-color: #e0b0ff"></div>
+                <div class="photo-frame">
+                  <img src="" alt="Victoria" />
+                </div>
+              </div>
+
+              <div class="info-area">
+                <div class="name-container">
+                  <span class="label" style="background: #e0b0ff; color: #000"
+                    >NOME</span
+                  >
+                  <span class="value-name">Victoria R. Neves </span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <span class="label">Formação</span><br />
+                    <span class="value"
+                      >Comunicação com Habilitação em Cinema
+                    </span>
+                  </div>
+                  <div>
+                    <span class="label">NASC.</span><br />
+                    <span class="value">15/03/2001</span>
+                  </div>
+                  <div>
+                    <span class="label">SIGNO</span><br />
+                    <span class="value">Peixes</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="label">Filme da vida</span><br />
+                  <span class="value">Mamma Mia!</span>
+                </div>
+
+                <div class="footer">
+                  <div class="signature" style="color: #e0b0ff">
+                    Victoria R. Neves
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="id-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-1"
+              alt="Pop"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bang_icon.svg/1024px-Bang_icon.svg.png"
+              class="bg-explosion expl-2"
+              alt="Pop"
+            />
+
+            <div class="header">
+              <h1>Histeria</h1>
+              <span class="badge" style="background: #00ccff">EDITOR</span>
+            </div>
+
+            <div class="content">
+              <div class="photo-area" style="transform: rotate(-3deg)">
+                <div class="tape" style="background-color: #00ccff"></div>
+                <div class="photo-frame">
+                  <img src="" alt="Rayane" />
+                </div>
+              </div>
+
+              <div class="info-area">
+                <div class="name-container">
+                  <span class="label" style="background: #00ccff; color: #000"
+                    >NOME</span
+                  >
+                  <span class="value-name">Rayane Lima</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <span class="label">Formação</span><br />
+                    <span class="value"
+                      >Jornalismo / Comunicação com Habilitação em Cinema
+                    </span>
+                  </div>
+                  <div>
+                    <span class="label">NASC.</span><br />
+                    <span class="value">11/10/1998</span>
+                  </div>
+                  <div>
+                    <span class="label">SIGNO</span><br />
+                    <span class="value">Libra</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="label">Filme da vida</span><br />
+                  <span class="value">Cartas para Juliesta</span>
+                </div>
+
+                <div class="footer">
+                  <div class="signature" style="color: #00ccff">
+                    Rayane Lima
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container" style="display: flex; justify-content: center">
+          <h3 class="abt-text">
+            Histeria é uma revista que olha para a cultura pop com seriedade,
+            afeto e senso crítico. Nascemos da vontade de dar profundidade a um
+            universo que, por muito tempo, foi tratado como menor —
+            especialmente quando associado ao público feminino. Falamos de
+            filmes, séries, livros, música e fenômenos culturais que moldaram
+            gerações, a partir de um olhar maduro, sensível e apaixonado.
+            Acreditamos que a cultura pop é um espelho social poderoso e que,
+            quando analisada com atenção, revela comportamentos, afetos e
+            narrativas essenciais para entender o mundo contemporâneo. A
+            Histeria ocupa um espaço ainda pouco explorado no Brasil: o de um
+            veículo que leva o pop a sério, sem ironia ou condescendência. Aqui,
+            gostar não é vergonha. Mais do que uma revista, somos um espaço de
+            troca, identificação e comunidade — onde diferentes vozes podem se
+            reconhecer, debater e celebrar aquilo que sempre amaram.
+          </h3>
+        </div>
+      </section>
+
+      <section class="pop-section">
+        <div class="container">
+          <header class="header-box">
+            <h2 class="section-title">Pop! Trends</h2>
+            <div class="section-subtitle">#ViraisDaSemana</div>
+          </header>
+
+          <div class="pop-grid">
+            <article class="stylized-card pink">
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1596704017254-9b1b184d3472?q=80&w=600&auto=format&fit=crop"
+                  alt="Beauty"
+                />
+              </div>
+              <div class="card-content">
+                <span class="tag-badge">Beauty</span>
+                <h3 class="card-headline">
+                  O truque de batom que está quebrando a internet hoje.
+                </h3>
+                <div class="card-actions">
+                  <span class="read-info">3 min leitura</span>
+                  <div class="go-btn">➜</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="stylized-card lilac">
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop"
+                  alt="Astrologia"
+                />
+              </div>
+              <div class="card-content">
+                <span class="tag-badge">Astro</span>
+                <h3 class="card-headline">
+                  Ranking dos signos mais sortudos este mês.
+                </h3>
+                <div class="card-actions">
+                  <span class="read-info">5 min leitura</span>
+                  <div class="go-btn">➜</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="stylized-card blue">
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1544367563-12123d895951?q=80&w=600&auto=format&fit=crop"
+                  alt="Wellness"
+                />
+              </div>
+              <div class="card-content">
+                <span class="tag-badge">Life</span>
+                <h3 class="card-headline">
+                  Apps de organização que parecem jogos.
+                </h3>
+                <div class="card-actions">
+                  <span class="read-info">4 min leitura</span>
+                  <div class="go-btn">➜</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="stylized-card peach">
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop"
+                  alt="Fashion"
+                />
+              </div>
+              <div class="card-content">
+                <span class="tag-badge">Style</span>
+                <h3 class="card-headline">
+                  5 Peças chave para um guarda-roupa inteligente.
+                </h3>
+                <div class="card-actions">
+                  <span class="read-info">6 min leitura</span>
+                  <div class="go-btn">➜</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="literatura-section">
+        <div class="container">
+          <h2 class="section-title">
+            Resenhas De
+            <span style="color: var(--color-secondary)">Literatura</span>
+          </h2>
+          <div class="literatura-grid">
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-book-open"></i></div>
+              <h4>A Distopia Esquecida</h4>
+              <small>Um clássico moderno redescoberto.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-feather-alt"></i></div>
+              <h4>Poemas da Meia-Noite</h4>
+              <small>A nova voz da poesia urbana.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+
+            <a href="news.html" class="resenha-card">
+              <div class="icon"><i class="fas fa-user-astronaut"></i></div>
+              <h4>Biografia do Gênio Pop</h4>
+              <small>Os altos e baixos da maior estrela.</small>
+              <span class="read-link">Ler Resenha</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-section">
+        <div class="container">
+          <h2>Não Perca Nada, <span style="color: #fff">Assine!</span></h2>
+          <p>
+            Receba as notícias mais quentes da cultura pop diretamente na sua
+            caixa de entrada.
+          </p>
+          <form
+            class="newsletter-form"
+            id="newsletter-form"
+            action="https://formspree.io/f/mblnkvrw"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu melhor e-mail pop aqui..."
+              required
+            />
+            <button type="submit">Quero Receber Notícias</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="instagram-section">
+        <div class="container">
+          <h2 class="insta-title">
+            Siga a <span class="pop-highlight"> Revista Histeria</span> no
+            Insta!
+          </h2>
+          <div class="insta-carousel-wrapper">
+            <div class="insta-carousel" id="insta-carousel">
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url('../assets/insta teste/a.png')"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Música | Os 5 álbuns que definiram a década!
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url('../assets/insta teste/b.png')"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Cinema | Crítica: O novo filme de ficção científica.
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url('../assets/insta teste/f.png')"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Literatura | 3 livros que todo fã de fantasia PRECISA ler.
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url('../assets/insta teste/d.png')"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">
+                    #Eventos | Cobertura exclusiva do último show!
+                  </p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+              <div class="insta-post">
+                <div
+                  class="post-image-placeholder"
+                  style="background-image: url('../assets/insta teste/e.png')"
+                ></div>
+                <div class="post-content">
+                  <p class="hashtag">#Teatro | Dica cultural da semana.</p>
+                  <a
+                    href="https://instagram.com/seurealinstagram"
+                    target="_blank"
+                    class="link"
+                    >Ver post completo</a
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="insta-nav prev"
+              id="insta-prev"
+              aria-label="Anterior"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="insta-nav next" id="insta-next" aria-label="Próximo">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="../assets/logo-revista-histeria_31.png"
+                alt="Logo Footer"
+              />
+            </div>
+            <p style="font-size: 0.9rem">
+              Sua fonte diária e definitiva de notícias sobre cultura pop,
+              música, cinema, livros e muito mais.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navegação</h4>
+            <ul class="footer-list">
+              <li><a href="news.html">Notícias</a></li>
+              <li><a href="news.html">Colunas</a></li>
+              <li><a href="news.html">Eventos</a></li>
+              <li><a href="news.html">História Histérica</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Editorias</h4>
+            <ul class="footer-list">
+              <li><a href="news.html">Cinema/TV</a></li>
+              <li><a href="news.html">Música</a></li>
+              <li><a href="news.html">Literatura</a></li>
+              <li><a href="news.html">Teatro</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Siga-nos</h4>
+            <div class="social-links">
+              <a
+                href="https://instagram.com/seurealinstagram"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://facebook.com/seurealfacebook"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://twitter.com/seurealtwitter"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">
+          &copy; 2025 Sua Revista Pop. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
